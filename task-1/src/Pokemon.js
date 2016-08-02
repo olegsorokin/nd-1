@@ -6,8 +6,11 @@ class Pokemon {
   toString() {
     return `Pokemon { name: ${this.name}, level: ${this.level} }`;
   }
+  valueOf() {
+    return this.level;
+  }
   show() {
-    process.stdout.write(this);
+    process.stdout.write(`${this.toString()}\n`);
   }
 }
 
