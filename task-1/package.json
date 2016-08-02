@@ -9,7 +9,8 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/ivanlemeshev/nd-1#readme",
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/.bin/mocha",
+    "start": "node ./src/main.js"
   },
   "devDependencies": {
     "eslint": "3.2.0",

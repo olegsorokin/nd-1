@@ -18,4 +18,10 @@ describe('Pokemon', () => {
       assert.equal('Pokemon { name: Bulbasaur, level: 1 }', this.pokemon.toString());
     });
   });
+
+  describe('#valueOf()', () => {
+    it('should returns pokemon level', () => {
+      assert.equal(1, this.pokemon.valueOf());
+    });
+  });
 });
