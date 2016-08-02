@@ -22,11 +22,11 @@ describe('PokemonList', () => {
 
   describe('#toString()', () => {
     it('should returns pokemon instance of pokemons list as a string', () => {
-      const emptyList = 'Count of pokemons: 0\n';
+      const emptyList = 'Count of pokemons: 0';
       const pokemons = 'Count of pokemons: 3\n'
                      + 'Pokemon { name: Bulbasaur, level: 1 }\n'
                      + 'Pokemon { name: Ivysaur, level: 3 }\n'
-                     + 'Pokemon { name: Venusaur, level: 2 }\n';
+                     + 'Pokemon { name: Venusaur, level: 2 }';
       assert.equal(pokemons, this.lost.toString());
       assert.equal(emptyList, this.found.toString());
     });

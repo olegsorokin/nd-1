@@ -15,7 +15,7 @@ describe('Pokemon', () => {
 
   describe('#toString()', () => {
     it('should returns pokemon instance of pokemon as a string', () => {
-      assert.equal('Pokemon { name: Bulbasaur, level: 1 }\n', this.pokemon.toString());
+      assert.equal('Pokemon { name: Bulbasaur, level: 1 }', this.pokemon.toString());
     });
   });
 });
