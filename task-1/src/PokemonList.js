@@ -1,6 +1,15 @@
 const Pokemon = require('./Pokemon.js');
 
 class PokemonList extends Array {
+  constructor(...args) {
+    args.forEach((item) => {
+      if (item.constructor !== Pokemon) {
+        throw new TypeError(`${item} is not a Pokemon instance`);
+      }
+    });
+    super(...args);
+  }
+
   add(name, level) {
     this.push(new Pokemon(name, level));
   }
@@ -36,6 +45,9 @@ class PokemonList extends Array {
   }
 
   max() {
+    if (this.length === 0) {
+      return null;
+    }
     const maxLevel = Math.max.apply(null, this);
     return this.filter(p => p.level === maxLevel)[0];
   }

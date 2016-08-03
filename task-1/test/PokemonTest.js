@@ -1,4 +1,4 @@
-const assert = require('assert');
+const expect = require('chai').expect;
 const Pokemon = require('./../src/Pokemon.js');
 
 describe('Pokemon', () => {
@@ -8,20 +8,20 @@ describe('Pokemon', () => {
 
   describe('#constructor()', () => {
     it('should creates a pokemon with name and level', () => {
-      assert.equal('Bulbasaur', this.pokemon.name);
-      assert.equal(1, this.pokemon.level);
+      expect(this.pokemon.name).to.equal('Bulbasaur');
+      expect(this.pokemon.level).to.equal(1);
     });
   });
 
   describe('#toString()', () => {
     it('should returns pokemon instance of pokemon as a string', () => {
-      assert.equal('Pokemon { name: Bulbasaur, level: 1 }', this.pokemon.toString());
+      expect(this.pokemon.toString()).to.equal('Pokemon { name: Bulbasaur, level: 1 }');
     });
   });
 
   describe('#valueOf()', () => {
     it('should returns pokemon level', () => {
-      assert.equal(1, this.pokemon.valueOf());
+      expect(this.pokemon.valueOf()).to.equal(1);
     });
   });
 });
