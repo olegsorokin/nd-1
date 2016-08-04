@@ -23,8 +23,11 @@ describe('PokemonList', () => {
       expect(this.full[2]).to.equal(this.pokemon3);
     });
 
-    it('should throws an error if tries add not Pokemon to list', () => {
-      expect(() => new PokemonList(123)).to.throw(/is not a Pokemon instance/);
+    it('should creates pokemon list only with Pokemon', () => {
+      const pokemonList = new PokemonList(this.pokemon1, 123);
+      expect(pokemonList.length).to.equal(1);
+      expect(pokemonList[0].name).to.equal(this.pokemon1.name);
+      expect(pokemonList[0].level).to.equal(this.pokemon1.level);
     });
   });
 
@@ -47,6 +50,7 @@ describe('PokemonList', () => {
       const pokemon = this.full[0];
       expect(this.full.grab(this.full[0].name)).to.equal(pokemon);
       expect(this.full.length).to.equal(2);
+      expect(this.full.grab('unknown')).to.equal(null);
     });
   });
 
@@ -64,6 +68,7 @@ describe('PokemonList', () => {
   describe('#max()', () => {
     it('should returns a pokemon of max level', () => {
       expect(this.full.max()).to.equal(this.pokemon2);
+      expect(this.empty.max()).to.equal(null);
     });
   });
 });

@@ -1,33 +1,33 @@
+const Pokemon = require('./Pokemon.js');
 const PokemonList = require('./PokemonList.js');
 
-const pokemons = [
-  ['Bulbasaur', 1],
-  ['Ivysaur', 2],
-  ['Venusaur', 3],
-  ['Charmander', 4],
-  ['Charmeleon', 5],
-  ['Charizard', 6],
-  ['Squirtle', 7],
-  ['Wartortle', 8],
-  ['Blastoise', 9],
-  ['Caterpie', 10],
-  ['Metapod', 11],
-  ['Butterfree', 12],
-  ['Weedle', 13],
-  ['Kakuna', 14],
+const lostPokemons = [
+  new Pokemon('Bulbasaur', 1),
+  new Pokemon('Ivysaur', 2),
+  new Pokemon('Venusaur', 3),
+  new Pokemon('Charmander', 4),
+  new Pokemon('Charmeleon', 5),
+  new Pokemon('Charizard', 6),
+  new Pokemon('Squirtle', 7),
+  new Pokemon('Butterfree', 12),
+  new Pokemon('Weedle', 13),
+  new Pokemon('Kakuna', 14),
 ];
 
-const lost = new PokemonList();
-const found = new PokemonList();
+const foundPokemons = [
+  new Pokemon('Wartortle', 8),
+  new Pokemon('Blastoise', 9),
+  new Pokemon('Caterpie', 10),
+  new Pokemon('Metapod', 11),
+];
 
-pokemons.forEach((pokemon) => {
-  lost.add(pokemon[0], pokemon[1]);
-});
+const lost = new PokemonList(...lostPokemons);
+const found = new PokemonList(...foundPokemons);
 
 lost.show();
 found.show();
 
-lost.moveTo('Metapod', found);
+lost.moveTo('Weedle', found);
 
 lost.show();
 found.show();

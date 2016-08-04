@@ -2,12 +2,7 @@ const Pokemon = require('./Pokemon.js');
 
 class PokemonList extends Array {
   constructor(...args) {
-    args.forEach((item) => {
-      if (item.constructor !== Pokemon) {
-        throw new TypeError(`${item} is not a Pokemon instance`);
-      }
-    });
-    super(...args);
+    super(...(args.filter(p => p.constructor === Pokemon)));
   }
 
   add(name, level) {
@@ -27,12 +22,13 @@ class PokemonList extends Array {
   }
 
   grab(name) {
-    const pokemon = this.filter(p => p.name === name)[0];
-    if (pokemon) {
-      const index = this.indexOf(pokemon);
-      this.splice(index, 1);
+    for (const pokemon of this) {
+      if (pokemon.name === name) {
+        this.splice(this.indexOf(pokemon), 1);
+        return pokemon;
+      }
     }
-    return pokemon;
+    return null;
   }
 
   moveTo(name, pokemons) {
@@ -45,11 +41,13 @@ class PokemonList extends Array {
   }
 
   max() {
-    if (this.length === 0) {
-      return null;
-    }
     const maxLevel = Math.max.apply(null, this);
-    return this.filter(p => p.level === maxLevel)[0];
+    for (const pokemon of this) {
+      if (pokemon.level === maxLevel) {
+        return pokemon;
+      }
+    }
+    return null;
   }
 }
 
