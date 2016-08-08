@@ -27,7 +27,7 @@ const found = new PokemonList(...foundPokemons);
 lost.show();
 found.show();
 
-lost.moveTo('Weedle', found);
+lost.move('Weedle', found);
 
 lost.show();
 found.show();
