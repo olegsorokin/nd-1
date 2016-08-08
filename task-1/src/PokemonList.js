@@ -22,13 +22,11 @@ class PokemonList extends Array {
   }
 
   grab(name) {
-    for (const pokemon of this) {
-      if (pokemon.name === name) {
-        this.splice(this.indexOf(pokemon), 1);
-        return pokemon;
-      }
+    const index = this.findIndex(p => p.name === name);
+    if (index === -1) {
+      return undefined;
     }
-    return null;
+    return this.splice(index, 1)[0];
   }
 
   moveTo(name, pokemons) {
@@ -42,12 +40,7 @@ class PokemonList extends Array {
 
   max() {
     const maxLevel = Math.max.apply(null, this);
-    for (const pokemon of this) {
-      if (pokemon.level === maxLevel) {
-        return pokemon;
-      }
-    }
-    return null;
+    return this.find(p => p.level === maxLevel);
   }
 }
 
