@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
-const Pokemon = require('./../src/Pokemon.js');
-const PokemonList = require('./../src/PokemonList.js');
+const Pokemon = require('./../src/Pokemon');
+const PokemonList = require('./../src/PokemonList');
 
 describe('PokemonList', () => {
   beforeEach(() => {
@@ -54,10 +54,10 @@ describe('PokemonList', () => {
     });
   });
 
-  describe('#moveTo()', () => {
+  describe('#move()', () => {
     it('should move pokemon from one list to another', () => {
       const pokemon = this.full[0];
-      this.full.moveTo(pokemon.name, this.empty);
+      this.full.move(pokemon.name, this.empty);
       expect(this.full.length).to.equal(2);
       expect(this.empty.length).to.equal(1);
       expect(this.empty[0].name).to.equal(pokemon.name);

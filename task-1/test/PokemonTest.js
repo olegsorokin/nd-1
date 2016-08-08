@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const Pokemon = require('./../src/Pokemon.js');
+const Pokemon = require('./../src/Pokemon');
 
 describe('Pokemon', () => {
   before(() => {

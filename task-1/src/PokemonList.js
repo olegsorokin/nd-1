@@ -1,4 +1,4 @@
-const Pokemon = require('./Pokemon.js');
+const Pokemon = require('./Pokemon');
 
 class PokemonList extends Array {
   constructor(...args) {
@@ -29,13 +29,12 @@ class PokemonList extends Array {
     return this.splice(index, 1)[0];
   }
 
-  moveTo(name, pokemons) {
+  move(name, targetList) {
     const pokemon = this.grab(name);
-    if (pokemon) {
-      pokemons.add(pokemon.name, pokemon.level);
-    } else {
+    if (!pokemon) {
       process.stdout.write(`Pokemon "${name}" not found.\n`);
     }
+    targetList.push(pokemon);
   }
 
   max() {
