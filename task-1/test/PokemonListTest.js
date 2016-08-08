@@ -46,11 +46,15 @@ describe('PokemonList', () => {
   });
 
   describe('#grab()', () => {
-    it('should returns pokemon from list', () => {
+    it('should returns pokemon from the list if pokemon exists', () => {
       const pokemon = this.full[0];
       expect(this.full.grab(this.full[0].name)).to.equal(pokemon);
       expect(this.full.length).to.equal(2);
+    });
+
+    it('should returns undefined from list if pokemon does not exist', () => {
       expect(this.full.grab('unknown')).to.equal(undefined);
+      expect(this.full.length).to.equal(3);
     });
   });
 
@@ -66,8 +70,11 @@ describe('PokemonList', () => {
   });
 
   describe('#max()', () => {
-    it('should returns a pokemon of max level', () => {
+    it('should returns a pokemon of max level from the list', () => {
       expect(this.full.max()).to.equal(this.pokemon2);
+    });
+
+    it('should returns undefined if pokemon list is empty', () => {
       expect(this.empty.max()).to.equal(undefined);
     });
   });
