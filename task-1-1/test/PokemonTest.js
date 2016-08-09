@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const Pokemon = require('./../src/Pokemon');
+const Pokemon = require('./../src/lib/Pokemon');
 
 describe('Pokemon', () => {
   before(() => {

@@ -1,5 +1,5 @@
-const Pokemon = require('./Pokemon');
-const PokemonList = require('./PokemonList');
+const Pokemon = require('./lib/Pokemon');
+const PokemonList = require('./lib/PokemonList');
 
 const lostPokemons = [
   new Pokemon('Bulbasaur', 1),
