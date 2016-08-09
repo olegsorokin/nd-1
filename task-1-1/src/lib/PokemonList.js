@@ -2,7 +2,7 @@ const Pokemon = require('./Pokemon');
 
 class PokemonList extends Array {
   constructor(...args) {
-    super(...(args.filter(p => p.constructor === Pokemon)));
+    super(...(args.filter(p => p instanceof Pokemon)));
   }
 
   add(name, level) {
