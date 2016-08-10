@@ -1,0 +1,26 @@
+{
+  "name": "nd-1-task-1",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/ivanlemeshev/nd-1.git"
+  },
+  "author": "Ivan Lemeshev",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/ivanlemeshev/nd-1#readme",
+  "scripts": {
+    "test": "node_modules/.bin/mocha",
+    "start": "node ./src/index.js"
+  },
+  "dependencies": {
+    "chai": "3.5.0",
+    "sinon": "1.17.5",
+    "colors": "1.1.2"
+  },
+  "devDependencies": {
+    "eslint": "3.2.0",
+    "eslint-config-airbnb-base": "5.0.1",
+    "eslint-plugin-import": "1.12.0",
+    "mocha": "3.0.0"
+  }
+}
