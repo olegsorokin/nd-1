@@ -7,13 +7,13 @@
   },
   "author": "Ivan Lemeshev",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/ivanlemeshev/nd-1#readme",
+  "homepage": "https://github.com/ivanlemeshev/nd-1/tree/master/task-1-1",
   "scripts": {
     "test": "node_modules/.bin/mocha",
     "start": "node ./src/main.js"
   },
   "dependencies": {
-    "chai": "^3.5.0"
+    "chai": "3.5.0"
   },
   "devDependencies": {
     "eslint": "3.2.0",
