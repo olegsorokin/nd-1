@@ -1,4 +1,3 @@
-
 const colors = require('colors/safe');
 const ChatApp = require('./lib/ChatApp');
 
