@@ -1,0 +1,19 @@
+{
+  "name": "nd-1-task-1-4-3",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/ivanlemeshev/nd-1.git"
+  },
+  "author": "Ivan Lemeshev",
+  "license": "MIT",
+  "homepage": "https://github.com/ivanlemeshev/nd-1/tree/master/task-1-4-3",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "devDependencies": {
+    "eslint": "3.2.0",
+    "eslint-config-airbnb-base": "5.0.1",
+    "eslint-plugin-import": "1.12.0"
+  }
+}
