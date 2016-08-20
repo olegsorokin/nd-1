@@ -7,7 +7,7 @@ const hash = crypto.createHash('md5');
 
 hash.setEncoding('hex');
 
-const onError = error => process.stdout.write(error.stack);
+const onError = error => process.stderr.write(error.stack);
 
 readerStream.on('error', onError);
 writerStream.on('error', onError);
