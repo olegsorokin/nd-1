@@ -6,7 +6,7 @@ const randomNumbers = new RandomNumbers();
 const stdoutWriter = new StdoutWriter();
 const square = new Square();
 
-const onError = error => process.stdout.write(error.stack);
+const onError = error => process.stderr.write(error.stack);
 
 randomNumbers.on('error', onError);
 stdoutWriter.on('error', onError);
